@@ -6,13 +6,14 @@
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 10:18:27 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/04 12:02:16 by huneto           ###   ########.fr       */
+/*   Updated: 2026/09/06 21:38:24 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isspace(char c)
 {
-	return (c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v');
+	return (c == '\f' || c == '\n' || c == '\r'
+		|| c == '\t' || c == '\v' || c == ' ');
 }
 
 int	is_numeric(char c)
@@ -49,5 +50,5 @@ int	ft_atoi(char *str)
 // #include <stdio.h>
 // int	main (void)
 // {
-// 	printf("%d", ft_atoi("0"));
+// 	printf("%d", ft_atoi("  ---10"));
 // }

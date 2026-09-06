@@ -6,7 +6,7 @@
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 18:54:37 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/06 19:54:33 by huneto           ###   ########.fr       */
+/*   Updated: 2026/09/06 20:56:50 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void	ft_putnbr_base(int nbr, char *base)
 	write(1, &base[nbr], 1);
 }
 
-// #include <stdio.h>
-// int	main(int argc, char **argv)
-// {
-// 		ft_putnbr_base(42, "0123456789abcdef");
-// }
+#include <stdio.h>
+int	main(int argc, char **argv)
+{
+		ft_putnbr_base(-42, "");
+}
