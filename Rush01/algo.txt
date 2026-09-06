@@ -1,0 +1,3 @@
+pour un pdv de taille i sur une grille n*n:
+n ne peut se placer devant les i-1 cases;
+
