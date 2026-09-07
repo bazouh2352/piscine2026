@@ -6,7 +6,7 @@
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 16:48:59 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/06 18:26:18 by huneto           ###   ########.fr       */
+/*   Updated: 2026/09/07 19:41:06 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size)
 
 	i = 0;
 	dst_size = ft_strlen(dst);
-	while (src[i] && i + 1 > size)
+	while (src[i] && i + dst_size + 1 < size)
 	{
 		dst[dst_size + i] = src[i];
 		i++;
 	}
-	dst[dst_size + i] = src[i];
+	dst[dst_size + i] = '\0';
 	return (dst_size + ft_strlen(src));
 }
 
@@ -55,4 +55,5 @@ unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size)
 // 		printf("%d ", dst[i]);
 // 		i++;
 // 	}
+// 	printf("\n%d", ft_strlen(dst));
 // }

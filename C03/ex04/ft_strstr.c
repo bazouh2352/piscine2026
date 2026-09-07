@@ -6,11 +6,10 @@
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 18:44:31 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/03 20:55:01 by huneto           ###   ########.fr       */
+/*   Updated: 2026/09/07 19:05:42 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stddef.h>
 
 char	*ft_strstr(char *str, char *to_find)
@@ -18,6 +17,8 @@ char	*ft_strstr(char *str, char *to_find)
 	int	i;
 	int	j;
 
+	if (!str[0] && !to_find[0])
+		return (str);
 	i = 0;
 	while (str[i])
 	{
@@ -33,7 +34,13 @@ char	*ft_strstr(char *str, char *to_find)
 	return (NULL);
 }
 
-// int	main(void)
+// #include <stdio.h>
+// #include <string.h>
+// int	main(int argc, char **argv)
 // {
-// 	printf("%s", ft_strstr("bah cest la meme", "la meme"));
+// 	if (argc == 3)
+// 	{
+// 		printf("%s\n", strstr(argv[1], argv[2]));
+// 		printf("%s\n", ft_strstr(argv[1], argv[2]));
+// 	}
 // }
