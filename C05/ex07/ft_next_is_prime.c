@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_next_is_prime.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/04 12:29:01 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/07 14:49:39 by huneto           ###   ########.fr       */
+/*   Created: 2026/09/08 18:49:52 by huneto            #+#    #+#             */
+/*   Updated: 2026/09/08 20:52:03 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_fibonacci(int index)
+int	ft_is_prime(int nb)
 {
-	if (index < 0)
-		return (-1);
-	if (index == 0)
+	int	i;
+
+	if (nb < 2)
 		return (0);
-	if (index == 1)
-		return (1);
-	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	i = 2;
+	while (i <= nb / i)
+	{
+		if (nb % i == 0)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int ft_find_next_prime(int nb)
+{
+	while (!ft_is_prime(nb))
+		nb++;
+	return (nb);
 }
 
 // #include <stdio.h>
-// #include <stdlib.h>
-// int main(int argc, char **argv)
+// int main(void)
 // {
-// 	if (argc == 2)
-// 		printf("%d\n", ft_fibonacci(atoi(argv[1])));
+// 	int i = 6;
+// 	printf("%d is the next prime after %d", ft_next_is_prime(i), i);
 // }

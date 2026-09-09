@@ -1,46 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/03 18:44:31 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/08 18:39:24 by huneto           ###   ########.fr       */
+/*   Created: 2026/09/07 14:27:10 by huneto            #+#    #+#             */
+/*   Updated: 2026/09/07 15:40:19 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char	*ft_strstr(char *str, char *to_find)
+int	ft_sqrt(int n)
 {
 	int	i;
-	int	j;
 
-	if (!str[0] && !to_find[0])
-		return (str);
+	if (n <= 0)
+		return (0);
 	i = 0;
-	while (str[i])
+	while (i * i < n)
 	{
-		j = 0;
-		while (str[i + j] == to_find[j] && to_find[j])
-		{
-			j++;
-		}
-		if (to_find[j] == 0)
-			return (&str[i]);
 		i++;
 	}
-	return (NULL);
+	return (i * (i * i == n));
 }
 
 // #include <stdio.h>
-// #include <string.h>
-// int	main(int argc, char **argv)
+// #include <stdlib.h>
+// int main(int argc, char **argv)
 // {
-// 	if (argc == 3)
-// 	{
-// 		printf("%s\n", strstr(argv[1], argv[2]));
-// 		printf("%s\n", ft_strstr(argv[1], argv[2]));
-// 	}
-// } 
+// 	if (argc == 2)
+// 		printf("%d", ft_sqrt(atoi(argv[1])));
+// }

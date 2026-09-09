@@ -1,46 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/03 18:44:31 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/08 18:39:24 by huneto           ###   ########.fr       */
+/*   Created: 2026/09/07 15:46:02 by huneto            #+#    #+#             */
+/*   Updated: 2026/09/08 18:47:19 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char	*ft_strstr(char *str, char *to_find)
+int	ft_is_prime(int nb)
 {
 	int	i;
-	int	j;
 
-	if (!str[0] && !to_find[0])
-		return (str);
-	i = 0;
-	while (str[i])
+	if (nb < 2)
+		return (0);
+	i = 2;
+	while (i <= nb / i)
 	{
-		j = 0;
-		while (str[i + j] == to_find[j] && to_find[j])
-		{
-			j++;
-		}
-		if (to_find[j] == 0)
-			return (&str[i]);
+		if (nb % i == 0)
+			return (0);
 		i++;
 	}
-	return (NULL);
+	return (1);
 }
 
 // #include <stdio.h>
-// #include <string.h>
-// int	main(int argc, char **argv)
+// int	main(void)
 // {
-// 	if (argc == 3)
+// 	int i = 0;
+// 	while (i < 68)
 // 	{
-// 		printf("%s\n", strstr(argv[1], argv[2]));
-// 		printf("%s\n", ft_strstr(argv[1], argv[2]));
+// 		printf("%d :%d\n", i, ft_is_prime(i));
+// 		i++;
 // 	}
-// } 
+// }
