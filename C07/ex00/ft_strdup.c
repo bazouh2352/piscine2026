@@ -1,32 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/09 10:04:42 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/11 10:30:43 by huneto           ###   ########.fr       */
+/*   Created: 2026/09/10 18:06:49 by huneto            #+#    #+#             */
+/*   Updated: 2026/09/10 18:41:44 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putstr(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		write(1, &str[i], 1);
 		i++;
 	}
+	return (i);
 }
 
-int	main(int argc, char **argv)
+char	*ft_strdup(char *str)
 {
-	(void) argc;
-	ft_putstr(argv[0]);
-	ft_putstr("\n");
+	char	*res;
+	int	i;
+
+	res = (char *) malloc((ft_strlen(str) + 1) * sizeof(char));
+	i = 0;
+	while (str[i])
+	{
+		res[i] = str[i];
+		i++;
+	}
+	return (res);
 }
+
+// #include <stdio.h>
+// int main(void)
+// {
+// 	char	*str = "prout";
+// 	char	*cpy;
+
+// 	printf("%p\t, %s\n", str, str);
+// 	cpy = ft_strdup(str);
+// 	printf("%p\t, %s\n", cpy, cpy);
+// 	printf("proutprout :)");
+// }
