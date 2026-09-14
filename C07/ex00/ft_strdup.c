@@ -6,7 +6,7 @@
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 18:06:49 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/10 18:41:44 by huneto           ###   ########.fr       */
+/*   Updated: 2026/09/12 18:29:19 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_strlen(char *str)
 char	*ft_strdup(char *str)
 {
 	char	*res;
-	int	i;
+	int		i;
 
 	res = (char *) malloc((ft_strlen(str) + 1) * sizeof(char));
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/11 11:15:58 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/11 12:05:50 by huneto           ###   ########.fr       */
+/*   Updated: 2026/09/12 18:29:00 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,20 @@ int	ft_ultimate_range(int **range, int min, int max)
 	return (len);
 }
 
-#include <stdio.h>
-int main (void)
-{
-	int *tab;
-	int min = -5;
-	int max = 4;
-	int len = 0;
+// #include <stdio.h>
+// int main (void)
+// {
+// 	int *tab;
+// 	int min = -5;
+// 	int max = 4;
+// 	int len = 0;
 
-	len = ft_ultimate_range(&tab, min, max);
-	int i = 0;
-	while (i < len)
-	{
-		printf("%d\n", tab[i++]);
-	}
-	printf ("\n%d, \t%p\n", *tab, tab);
-	free(tab);
-}
+// 	len = ft_ultimate_range(&tab, min, max);
+// 	int i = 0;
+// 	while (i < len)
+// 	{
+// 		printf("%d\n", tab[i++]);
+// 	}
+// 	printf ("\n%d, \t%p\n", *tab, tab);
+// 	free(tab);
+// }
