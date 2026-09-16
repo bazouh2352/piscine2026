@@ -6,7 +6,7 @@
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/11 11:15:58 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/12 18:29:00 by huneto           ###   ########.fr       */
+/*   Updated: 2026/09/16 09:29:34 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int	ft_ultimate_range(int **range, int min, int max)
 	int	len;
 
 	len = max - min;
-	res = (int *) malloc((len > 0) * len * sizeof(int));
+	if (len < 1)
+		return (*range = NULL, 0);
+	res = (int *) malloc(len * sizeof(int));
 	if (!res)
 		return (*range = NULL, 0);
 	i = 0;
@@ -33,8 +35,8 @@ int	ft_ultimate_range(int **range, int min, int max)
 // int main (void)
 // {
 // 	int *tab;
-// 	int min = -5;
-// 	int max = 4;
+// 	int min = 0;
+// 	int max = 5;
 // 	int len = 0;
 
 // 	len = ft_ultimate_range(&tab, min, max);
@@ -43,6 +45,6 @@ int	ft_ultimate_range(int **range, int min, int max)
 // 	{
 // 		printf("%d\n", tab[i++]);
 // 	}
-// 	printf ("\n%d, \t%p\n", *tab, tab);
+// 	printf ("\t%p\n", tab);
 // 	free(tab);
 // }

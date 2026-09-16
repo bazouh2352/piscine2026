@@ -6,7 +6,7 @@
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 17:33:33 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/14 22:24:03 by huneto           ###   ########.fr       */
+/*   Updated: 2026/09/15 21:47:55 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_strcat(char *dst, char *src)
 	return (dst);
 }
 
-char	*strjoin(int size, char **strs, char *sep)
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	int		i;
 	char	*res;

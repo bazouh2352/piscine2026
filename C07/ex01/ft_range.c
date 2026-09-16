@@ -6,7 +6,7 @@
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 18:42:44 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/12 18:29:05 by huneto           ###   ########.fr       */
+/*   Updated: 2026/09/16 09:25:49 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int	*ft_range(int min, int max)
 	int	len;
 
 	len = max - min;
-	res = malloc((len > 0) * len * sizeof(int));
+	if (len < 1)
+		return (NULL);
+	res = malloc(len * sizeof(int));
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -29,11 +31,12 @@ int	*ft_range(int min, int max)
 }
 
 // #include <stdio.h>
+// #include <limits.h>
 // int main (void)
 // {
 // 	int *tab;
-// 	int min = -5;
-// 	int max = 4;
+// 	int min = INT_MIN;
+// 	int max = INT_MAX;
 
 // 	tab = ft_range(min, max);
 // 	int i = 0;

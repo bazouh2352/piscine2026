@@ -6,7 +6,7 @@
 /*   By: huneto <huneto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 20:15:46 by huneto            #+#    #+#             */
-/*   Updated: 2026/09/14 20:41:39 by huneto           ###   ########.fr       */
+/*   Updated: 2026/09/16 12:18:22 by huneto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	count_substr(char *str, char *sep)
 		{
 			i++;
 			res++;
-			while (!issep(str[i], sep))
+			while (!issep(str[i], sep) && str[i])
 				i++;
 		}
 		else
@@ -72,7 +72,7 @@ char	*alloc_substr(char *str, int *global_pos, char *sep)
 		*global_pos += 1;
 	}
 	i = *global_pos;
-	while (!issep(str[i], sep))
+	while (!issep(str[i], sep) && str[i])
 	{
 		i++;
 	}
@@ -80,7 +80,7 @@ char	*alloc_substr(char *str, int *global_pos, char *sep)
 	if (!res)
 		return (NULL);
 	i = 0;
-	while (!issep(str[*global_pos], sep))
+	while (!issep(str[*global_pos], sep) && str[*global_pos])
 	{
 		res[i] = str[*global_pos];
 		i++;
@@ -107,21 +107,23 @@ char	**ft_split(char *str, char *sep)
 	{
 		res[i] = alloc_substr(str, &global_pos, sep);
 		if (!res)
-			return (freeall(res), NULL);
+			return (NULL);
 		i++;
 	}
 	res[i] = NULL;
 	return (res);
 }
 
-// int main(void)
-// {
-// 	char **res = ft_split("doubabi uio prout caac\nplouf\nn", "\n");
-// 	int i = 0;
-// 	while (res[i])
-// 	{
-// 		printf("%s\n", res[i]);
-// 		i++;
-// 	}
-// 	freeall(res);
-// }
+#include <stdio.h>
+int main(void)
+{
+	char **res = ft_split(NULL, NULL);
+	int i = 0;
+	while (res[i])
+	{
+		printf("%s\n", res[i]);
+		i++;
+	}
+	freeall(res);
+	// printf("%d", count_substr("bonjour", ""));
+}
